@@ -13,3 +13,7 @@ C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\r
 C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\PW4_Siadro.pdb
 C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\PW4_Siadro.genruntimeconfig.cache
 C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\ref\PW4_Siadro.dll
+C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\bin\Debug\net8.0\PW5Lib.dll
+C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\bin\Debug\net8.0\PW5Lib.pdb
+C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\PW4_Siadro.csproj.AssemblyReference.cache
+C:\Users\sjdro\source\repos\PW_4_Siadro\PW4_Siadro\PW4_Siadro\obj\Debug\net8.0\PW4_Siadro.csproj.Up2Date

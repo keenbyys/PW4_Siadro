@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PW5Lib;
 
 namespace PW4_Siadro
 {
@@ -10,55 +11,64 @@ namespace PW4_Siadro
     {
         static void Main(string[] args)
         {
-            string answearIsOld;
+            Console.Write("How many houses do you want to enter?: ");
+            int count = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write(" Input address: ");
-            string address = Console.ReadLine();
+            HouseLib[] houses = new HouseLib[count];
 
-            Console.Write(" Input floors: ");
-            int floors = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write(" Input area: ");
-            double area = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write(" Input year build: ");
-            int yearBuild = Convert.ToInt16(Console.ReadLine());
-
-            Console.Write(" Has a garage? [Yes | No]: ");
-            string answear = Console.ReadLine();
-            
-            bool hasGarage = HasGarage(answear);
-
-            Console.Write(" Input number of room: ");
-            int numRooms = Convert.ToInt16(Console.ReadLine());
-
-            Console.Write(" Input material: ");
-            string material = Console.ReadLine();
-
-            House house = new House(address, floors, area, yearBuild, hasGarage, numRooms, material);
-
-            bool isOld = house.IsOld();
-
-            if (!isOld)
+            for (int i = 0; i < count; i++)
             {
-                answearIsOld = "No";
-            } else
-            {
-                answearIsOld = "Yes";
+                Console.WriteLine($"\n--- Entering info for House #{i + 1} ---");
+
+                Console.Write(" Input address: ");
+                string sAddress = Console.ReadLine();
+
+                Console.Write(" Input floors: ");
+                int sFloors = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write(" Input area: ");
+                double sArea = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write(" Input year build: ");
+                int sYearBuild = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write(" Has a garage? [Yes | No]: ");
+                string answer = Console.ReadLine();
+                bool sHasGarage = HasGarage(answer);
+
+                Console.Write(" Input number of rooms: ");
+                int sNumRooms = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write(" Input material: ");
+                string sMaterial = Console.ReadLine();
+
+                HouseLib house = new HouseLib();
+                house.Address = sAddress;
+                house.Floors = sFloors;
+                house.Area = sArea;
+                house.YearBuild = sYearBuild;
+                house.HasGarage = sHasGarage;
+                house.NumRooms = sNumRooms;
+                house.Material = sMaterial;
+
+                houses[i] = house;
             }
 
-                Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("\n========== HOUSE INFO ==========");
+            foreach (HouseLib house in houses)
+            {
+                string isOld = house.IsOld() ? "Yes" : "No";
 
-            Console.WriteLine("\n Info:" +
-                "\n Address: {0}," +
-                "\n Floors: {1}," +
-                "\n Area: {2}," +
-                "\n Year build: {3}," +
-                "\n Garage: {4}," +
-                "\n Number of room: {5}" +
-                "\n Material: {6}" +
-                "\n Is it an old building?: {7}", house.Address, house.Floors, house.Area, house.YearBuild, house.HasGarage, house.NumRooms, house.Material, answearIsOld);
-
+                Console.WriteLine("\n-------------------------------------------");
+                Console.WriteLine(" Address: {0}", house.Address);
+                Console.WriteLine(" Floors: {0}", house.Floors);
+                Console.WriteLine(" Area: {0}", house.Area);
+                Console.WriteLine(" Year build: {0}", house.YearBuild);
+                Console.WriteLine(" Garage: {0}", house.HasGarage);
+                Console.WriteLine(" Number of rooms: {0}", house.NumRooms);
+                Console.WriteLine(" Material: {0}", house.Material);
+                Console.WriteLine(" Is it an old building?: {0}", isOld);
+            }
         }
 
         public static bool HasGarage(string answear)
